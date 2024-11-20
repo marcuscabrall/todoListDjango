@@ -1,4 +1,3 @@
-from datetime import datetime
 from django.db import models
 
 class Todo(models.Model):
@@ -9,7 +8,7 @@ class Todo(models.Model):
     description = models.CharField(max_length=255, help_text="Enter a description")
 
     def deadline_as_date(self):
-        return datetime.fromtimestamp(self.deadline).strftime('%d/%m/%Y %H:%M') if self.deadline else None
+        return self.deadline.strftime('%d/%m/%Y') if self.deadline else None
 
     def finished_as_date(self):
-        return datetime.fromtimestamp(self.finished_at).strftime('%d/%m/%Y %H:%M') if self.finished_at else None
+        return self.finished_at.strftime('%d/%m/%Y') if self.finished_at else None

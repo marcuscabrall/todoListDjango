@@ -38,7 +38,7 @@
                     <th scope="row">{{ todo.id }}</th>
                     <td>{{ todo.title }}</td>
                     <td>{{ todo.description }}</td>
-                    <td>{{ todo.created_at|date:"d/m/Y H:i" }}</td>
+                    <td>{{ todo.created_at|date:"d/m/Y" }}</td>
                     <td>{{ todo.deadline_as_date }}</td>
                     <td>{{ todo.finished_as_date|default:"-" }}</td>
                     <td>
