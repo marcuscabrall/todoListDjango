@@ -2,9 +2,9 @@ from django.db import models
 
 class Todo(models.Model):
     title = models.CharField(max_length=100, help_text="Enter a title", null=False, blank=False)
-    created_at = models.DateTimeField(auto_now_add=True, null=False, blank=False)
-    deadline = models.DateTimeField(null=False, blank=False)
-    finished_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateField(auto_now_add=True, null=False, blank=False)
+    deadline = models.DateField(null=False, blank=False)
+    finished_at = models.DateField(null=True, blank=True)
     description = models.CharField(max_length=255, help_text="Enter a description")
 
     def deadline_as_date(self):
